@@ -17,7 +17,7 @@
 <script>
   import TodoListInput from "./TodoListInput";
   import TodoListItem from "./TodoListItem";
-  import {addTodo, deleteTodo, getTodo, updateTodo} from "../api/api";
+  import {addTodo, removeTodo, getTodo, updateTodo} from "../api/api";
 
   export default {
     name: "TodoList",
@@ -51,7 +51,7 @@
           .then(res => this.renderList());
       },
       deleteList(id) {
-        deleteTodo(id)
+        removeTodo(id)
           .then(res => this.renderList());
       },
       updateList(val) {
