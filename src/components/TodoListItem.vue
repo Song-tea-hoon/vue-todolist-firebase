@@ -2,8 +2,8 @@
   <li>
     <input
         type="checkbox"
-        :checked="done"
-        @click.prevent="onChange"
+        v-model="done"
+        @change="onChange"
     >
     <span :class="{'is-done': done}">{{text}}</span>
     <button @click="deleteClick">X</button>
@@ -33,7 +33,7 @@
         this.$emit('delete', this.id);
       },
       onChange(e) {
-        this.$emit('update', {id:this.id, value: !this.done});
+        this.$emit('update', {id:this.id, value: this.done});
       }
     }
   }
